@@ -1,6 +1,7 @@
-FROM logstash:2.3.1
+FROM logstash:latest
 
-RUN logstash-plugin install --development
+USER root
+RUN /usr/share/logstash/bin/logstash-plugin install --development
 
 ARG LST
 ARG FILTER_CONFIG
