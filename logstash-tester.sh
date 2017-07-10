@@ -60,7 +60,7 @@ run_docker() {
     rootdir=`dirname $0`
 
     echo "====> Build docker image for test"
-    docker build -t gaspaio/logstash-tester \
+    docker build -t kkaempf/logstash-tester \
         --build-arg LST=$rootdir \
         --build-arg FILTER_CONFIG=$3 \
         --build-arg PATTERN_CONFIG=$4 \
@@ -69,7 +69,9 @@ run_docker() {
         -f $rootdir/Dockerfile .
 
     echo "====> Run test in docker container"
-    docker run --rm -it gaspaio/logstash-tester $action $configtest
+    echo "====> action $action"
+    echo "====> configtest $configtest"
+    docker run --rm -it kkaempf/logstash-tester $action $configtest
 }
 
 # Default values
