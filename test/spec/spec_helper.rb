@@ -8,6 +8,9 @@ Gem.paths = {
 $: << "/usr/share/logstash/vendor/bundle/jruby/1.9/gems/logstash-devutils-1.3.3-java/lib"
 $: << "/usr/share/logstash/logstash-core/lib"
 
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
 require "logstash/devutils/rspec/spec_helper"
 require 'rspec/expectations'
 
