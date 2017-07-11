@@ -59,6 +59,7 @@ filter_data.each do |data_file|
   (0..(test_case['cases'].length-1)).each do |i|
     describe "#{File.basename(data_file)}##{i}" do
       config(@@configuration)
+      test_case = JSON.parse(File.read(data_file))
       run_case(test_case['cases'][i], test_case['fields'], test_case['ignore'], data_file, i)
     end
   end
