@@ -1,0 +1,25 @@
+{
+  "name": "Apache access.log",
+  "fields": {
+    "type": "access_log"
+  },
+  "ignore": ["@version", "timestamp"],
+  "cases": [
+    {
+      "in": "10.160.64.92 - - [15/Jun/2017:10:00:04 +1000] \"POST /XMLRPC HTTP/1.1\" 200 1060",
+      "out": {
+        "type": "access_log",
+        "message": "10.160.64.92 - - [15/Jun/2017:10:00:04 +1000] \"POST /XMLRPC HTTP/1.1\" 200 1060",
+        "clientip": "10.160.64.92",
+        "ident": "-",
+        "auth": "-",
+        "@timestamp": "2017-06-15T00:00:04.000Z",
+        "verb": "POST",
+        "request": "/XMLRPC",
+        "httpversion": "1.1",
+        "response": "200",
+        "bytes": "1060"
+      }
+    }
+  ]
+}
