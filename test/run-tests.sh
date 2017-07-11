@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "===> /tests/run-tests.sh $1 $2"
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 
-export GEM_HOME=/usr/share/logstash/vendor/bundle/jruby/1.9
-export LOAD_PATH=/usr/share/logstash/vendor/bundle/jruby/1.9/gems/logstash-devutils-1.3.3-java/lib:/usr/share/logstash/logstash-core
 if [[ $1 == "all" || $1 == "patterns" ]]; then
     echo "###  RUN PATTERN TESTS    #####################"
     jruby /usr/share/logstash/vendor/bundle/jruby/1.9/bin/rspec -f p /test/spec/patterns_spec.rb
