@@ -6,6 +6,8 @@ RUN zypper --gpg-auto-import-keys --non-interactive in --no-recommends \
 
 RUN /usr/share/logstash/bin/logstash-plugin install --development
 
+RUN jgem install rspec
+
 # this gem building doesn't work in ~root
 WORKDIR /tmp
 RUN jgem build /usr/share/logstash/logstash-core/logstash-core.gemspec
