@@ -1,0 +1,80 @@
+{
+  "name": "rhn_server_xmlrpc.log",
+  "fields": {
+    "type": "rhn_server_xmlrpc"
+  },
+  "ignore": ["@version", "timestamp", "message"],
+  "cases": [
+    {
+      "in": "2017/04/30 14:32:44 +03:00 21012 10.184.52.6: xmlrpc/registration.welcome_message('lang: None',)",
+      "out": {
+        "type": "rhn_server_xmlrpc",
+        "@timestamp": "2017-04-30T11:32:44.000Z",
+        "pid": 21012,
+        "clientip": "10.184.52.6",
+        "module": "xmlrpc",
+        "function": "registration.welcome_message",
+        "args": "'lang: None',"
+      }
+    },
+    {
+      "in": "2017/04/30 14:32:44 +03:00 20992 10.184.52.6: xmlrpc/registration.register_osad",
+      "out": {
+        "type": "rhn_server_xmlrpc",
+        "@timestamp": "2017-04-30T11:32:44.000Z",
+        "pid": 20992,
+        "clientip": "10.184.52.6",
+        "module": "xmlrpc",
+        "function": "registration.register_osad"
+      }
+    },
+    {
+      "in": "2017/04/30 14:32:44 +03:00 20992 10.184.52.6: rhnServer/server_certificate.__validate_checksum('ERROR', 'Checksum check failed: 7096879bd8f61d09928cf36c3198e75e37b220c21d0bd298804aea21db9bc523 != 458174ed62d7ac303e8e0ed09ac9ec09b155edb4f712719fb18ba02b2245c78a', \"fields = ['system_id', 'os_release', 'operating_system', 'architecture', 'username', 'type']\", \"attrs = {'username': 'suseadm', 'operating_system': 'sles-release', 'description': 'Initial Registration Parameters:\\nOS: sles-release\\nRelease: 11.2\\nCPU Arch: x86_64', 'profile_name': 'ienvish002.ienvis.intel.com', 'system_id': 'ID-1000011222', 'architecture': 'x86_64', 'os_release': '11.2', 'type': 'REAL'}\")",
+      "out": {
+        "type": "rhn_server_xmlrpc",
+        "@timestamp": "2017-04-30T11:32:44.000Z",
+        "pid": 20992,
+        "clientip": "10.184.52.6",
+        "module": "rhnServer",
+        "function": "server_certificate.__validate_checksum",
+        "args": "'ERROR', 'Checksum check failed: 7096879bd8f61d09928cf36c3198e75e37b220c21d0bd298804aea21db9bc523 != 458174ed62d7ac303e8e0ed09ac9ec09b155edb4f712719fb18ba02b2245c78a', \"fields = ['system_id', 'os_release', 'operating_system', 'architecture', 'username', 'type']\", \"attrs = {'username': 'suseadm', 'operating_system': 'sles-release', 'description': 'Initial Registration Parameters:\\nOS: sles-release\\nRelease: 11.2\\nCPU Arch: x86_64', 'profile_name': 'ienvish002.ienvis.intel.com', 'system_id': 'ID-1000011222', 'architecture': 'x86_64', 'os_release': '11.2', 'type': 'REAL'}\""
+      }
+    },
+    {
+      "in": "2017/04/30 14:39:15 +03:00 21013 10.187.64.133: xmlrpc/queue.get(1000013815, 2, 'checkins enabled')",
+      "out": {
+        "type": "rhn_server_xmlrpc",
+        "@timestamp": "2017-04-30T11:39:15.000Z",
+        "pid": 21013,
+        "clientip": "10.187.64.133",
+        "module": "xmlrpc",
+        "function": "queue.get",
+        "args": "1000013815, 2, 'checkins enabled'"
+      }
+    },
+    {
+      "in": "2017/04/30 14:50:34 +03:00 20992 10.186.184.1: rhnServer/server_certificate.valid('Server id ID-1000025880 not found in database',)",
+      "out": {
+        "type": "rhn_server_xmlrpc",
+        "@timestamp": "2017-04-30T11:50:34.000Z",
+        "pid": 20992,
+        "clientip": "10.186.184.1",
+        "module": "rhnServer",
+        "function": "server_certificate.valid",
+        "args": "'Server id ID-1000025880 not found in database',"
+      }
+    },
+    {
+      "in": "2017/04/30 15:02:54 +03:00 21013 10.184.152.177: xmlrpc/up2date.listChannels(1000010024,)",
+      "out": {
+        "type": "rhn_server_xmlrpc",
+        "@timestamp": "2017-04-30T12:02:54.000Z",
+        "pid": 21013,
+        "clientip": "10.184.152.177",
+        "module": "xmlrpc",
+        "function": "up2date.listChannels",
+        "args": "1000010024,"
+      }
+    }
+  ]
+}
