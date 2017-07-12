@@ -7,4 +7,6 @@ MODULE \w+
 FUNCTION [\w_\.]+
 
 # see RHNARGS
-OSAARGS (\'[^\']*\'|\"[^\"]*\"|[\w\d,\s\._\[\]\{\}\<\>\*\?\"/=:-])*
+OSAARGS [^\)]*
+
+OSA_DISPATCHER %{TIMESTAMP:timestamp} %{PID:pid:int} %{IP:clientip}: %{MODULE:module}/%{FUNCTION:function}(\(%{OSAARGS:args}\))?

@@ -1,0 +1,59 @@
+{
+  "name": "osa-dispatcher.log",
+  "pattern": "OSA_DISPATCHER",
+  "cases": [
+    {
+      "in": "2017/06/14 10:00:06 +11:00 1757 0.0.0.0: osad/jabber_lib.__init__",
+      "out": {
+        "timestamp": "2017/06/14 10:00:06 +11:00",
+        "pid": 1757,
+        "clientip": "0.0.0.0",
+        "module": "osad",
+        "function": "jabber_lib.__init__"
+      }
+    },
+    {
+      "in": "2017/06/14 10:00:06 +11:00 1757 0.0.0.0: osad/jabber_lib.connect('ERROR', 'Error connecting to jabber server: [Errno 111] Connection refused')",
+      "out": {
+        "timestamp": "2017/06/14 10:00:06 +11:00",
+        "pid": 1757,
+        "clientip": "0.0.0.0",
+        "module": "osad",
+        "function": "jabber_lib.connect",
+        "args": "'ERROR', 'Error connecting to jabber server: [Errno 111] Connection refused'"
+      }
+    },
+    {
+      "in": "2017/06/14 10:00:06 +11:00 1757 0.0.0.0: osad/jabber_lib.print_message('socket error',)",
+      "out": {
+        "timestamp": "2017/06/14 10:00:06 +11:00",
+        "pid": 1757,
+        "clientip": "0.0.0.0",
+        "module": "osad",
+        "function": "jabber_lib.print_message",
+        "args": "'socket error',"
+      }
+    },
+    {
+      "in": "2017/06/14 19:57:42 +11:00 1770 0.0.0.0: osad/jabber_lib.setup_connection('Connected to jabber server', 'suse-manager.mackillop.act.edu.au')",
+      "out": {
+        "timestamp": "2017/06/14 19:57:42 +11:00",
+        "pid": 1770,
+        "clientip": "0.0.0.0",
+        "module": "osad",
+        "function": "jabber_lib.setup_connection",
+        "args": "'Connected to jabber server', 'suse-manager.mackillop.act.edu.au'"
+      }
+    },
+    {
+      "in": "2017/06/14 19:57:42 +11:00 1770 0.0.0.0: osad/jabber_lib.process_forever",
+      "out": {
+        "timestamp": "2017/06/14 19:57:42 +11:00",
+        "pid": 1770,
+        "clientip": "0.0.0.0",
+        "module": "osad",
+        "function": "jabber_lib.process_forever"
+      }
+    }
+  ]
+}
