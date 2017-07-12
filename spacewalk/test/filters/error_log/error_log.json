@@ -1,0 +1,85 @@
+{
+  "name": "Apache 2 error.log",
+  "fields": {
+    "type": "error_log"
+  },
+  "ignore": ["@version", "timestamp", "message"],
+  "cases": [
+    {
+      "in": "[Thu Jun 15 10:01:08.477959 2017] [wsgi:warn] [pid 11076] mod_wsgi: Compiled for Python/2.7.9.",
+      "out": {
+        "type": "error_log",
+        "@timestamp": "2017-06-15T10:01:08.477Z",
+        "module": "wsgi",
+        "loglevel": "warn",
+        "pid": "11076",
+        "errorcode": "mod_wsgi",
+        "reason": "Compiled for Python/2.7.9."
+      }
+    },
+    {
+      "in": "[Thu Jun 15 10:01:08.478066 2017] [mpm_prefork:notice] [pid 11076] AH00163: Apache/2.4.16 (Linux/SUSE) OpenSSL/1.0.1i-fips mod_wsgi/4.4.13 Python/2.7.13 configured -- resuming normal operations",
+      "out": {
+        "type": "error_log",
+        "@timestamp": "2017-06-15T10:01:08.478Z",
+        "module": "mpm_prefork",
+        "loglevel": "notice",
+        "pid": "11076",
+        "errorcode": "AH00163",
+        "reason": "Apache/2.4.16 (Linux/SUSE) OpenSSL/1.0.1i-fips mod_wsgi/4.4.13 Python/2.7.13 configured -- resuming normal operations"
+      }
+    },
+    {
+      "in": "[Thu Jun 15 10:01:08.478074 2017] [core:notice] [pid 11076] AH00094: Command line: '/usr/sbin/httpd-prefork -f /etc/apache2/httpd.conf -D SYSCONFIG -D SSL -D ISSUSE -C PidFile /var/run/httpd.pid -C Include /etc/apache2/sysconfig.d/ -D SYSTEMD -D FOREGROUND'",
+      "out": {
+        "type": "error_log",
+        "@timestamp": "2017-06-15T10:01:08.478Z",
+        "module": "core",
+        "loglevel": "notice",
+        "pid": "11076",
+        "errorcode": "AH00094",
+        "reason": "Command line: '/usr/sbin/httpd-prefork -f /etc/apache2/httpd.conf -D SYSCONFIG -D SSL -D ISSUSE -C PidFile /var/run/httpd.pid -C Include /etc/apache2/sysconfig.d/ -D SYSTEMD -D FOREGROUND'"
+      }
+    },
+    {
+      "in": "[Thu Jun 15 10:02:00.019413 2017] [proxy:error] [pid 29458] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:25151 (localhost) failed",
+      "out": {
+        "type": "error_log",
+        "@timestamp": "2017-06-15T10:02:00.019Z",
+        "module": "proxy",
+        "loglevel": "error",
+        "pid": "29458",
+        "proxy_errorcode": "111",
+        "proxy_message": "Connection refused",
+        "errorcode": "AH00957",
+        "reason": "HTTP: attempt to connect to 127.0.0.1:25151 (localhost) failed"
+      }
+    },
+    {
+      "in": "[Thu Jun 15 10:02:00.019473 2017] [proxy:error] [pid 29458] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s",
+      "out": {
+        "type": "error_log",
+        "@timestamp": "2017-06-15T10:02:00.019Z",
+        "module": "proxy",
+        "loglevel": "error",
+        "pid": "29458",
+        "errorcode": "AH00959",
+        "reason": "ap_proxy_connect_backend disabling worker for (localhost) for 60s"
+      }
+    },
+    {
+      "in": "[Thu Jun 15 10:02:00.019492 2017] [proxy_http:error] [pid 29458] [client 10.160.64.18:51600] AH01114: HTTP: failed to make connection to backend: localhost",
+      "out": {
+        "type": "error_log",
+        "@timestamp": "2017-06-15T10:02:00.019Z",
+        "module": "proxy_http",
+        "loglevel": "error",
+        "pid": "29458",
+        "clientip": "10.160.64.18",
+        "clientport": "51600",
+        "errorcode": "AH01114",
+        "reason": "HTTP: failed to make connection to backend: localhost"
+      }
+    }
+  ]
+}
