@@ -1,0 +1,33 @@
+{
+  "name": "rhn_server_sat.log",
+  "fields": {
+    "type": "rhn_server_sat"
+  },
+  "ignore": ["@version", "timestamp", "message"],
+  "cases": [
+    {
+      "in": "2017/05/08 14:41:53 +03:00 16855 0.0.0.0: satellite_exporter/satexport._validate_version('Server version', 3.7, 'Client version', '3.7')",
+      "out": {
+        "type": "rhn_server_sat",
+        "@timestamp": "2017-05-08T11:41:53.000Z",
+        "pid": 16855,
+        "clientip": "0.0.0.0",
+        "module": "satellite_exporter",
+        "function": "satexport._validate_version",
+        "args": "'Server version', 3.7, 'Client version', '3.7'"
+      }
+    },
+    {
+      "in": "2017/05/08 15:00:30 +03:00 18901 10.221.84.68: rhnSQL/driver_postgresql.check_connection('ERROR', \"DATABASE CONNECTION TO 'susemanager' LOST\", \"Exception information: Database instance has no attribute 'dbh'\")",
+      "out": {
+        "type": "rhn_server_sat",
+        "@timestamp": "2017-05-08T12:00:30.000Z",
+        "pid": 18901,
+        "clientip": "10.221.84.68",
+        "module": "rhnSQL",
+        "function": "driver_postgresql.check_connection",
+        "args": "'ERROR', \"DATABASE CONNECTION TO 'susemanager' LOST\", \"Exception information: Database instance has no attribute 'dbh'\""
+      }
+    }
+  ]
+}
