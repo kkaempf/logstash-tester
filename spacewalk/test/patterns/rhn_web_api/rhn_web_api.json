@@ -1,0 +1,53 @@
+{
+  "name": "rhn_web_api.log",
+  "pattern": "RHN_WEB_API",
+  "cases": [
+    {
+      "in": "[2014-10-16 01:20:12,932] INFO  - REQUESTED FROM: 127.0.0.1 CALL: api.getVersion() CALLER: (none) TIME: 0.036 seconds",
+      "out": {
+        "timestamp": "2014-10-16 01:20:12,932",
+        "loglevel": "INFO",
+        "clientip": "127.0.0.1",
+        "api": "api.getVersion",
+        "caller": "none",
+        "duration": 0.036
+      }
+    },
+    {
+      "in": "[2014-10-16 01:22:21,301] INFO  - REQUESTED FROM: 10.160.64.18 CALL: auth.checkAuthToken(taskomatic_user, d90c7d0f6505505981d2f65a55481208) CALLER: (none) TIME: 0.003 seconds",
+      "out": {
+        "timestamp": "2014-10-16 01:22:21,301",
+        "loglevel": "INFO",
+        "clientip": "10.160.64.18",
+        "api": "auth.checkAuthToken",
+        "args": "taskomatic_user, d90c7d0f6505505981d2f65a55481208",
+        "caller": "none",
+        "duration": 0.003
+      }
+    },
+    {
+      "in": "[2015-06-24 11:27:36,372] ERROR - REQUESTED FROM: 10.160.64.18 CALL: sync.content.synchronizeChannels(116xbc5e24f008dc928de08e9eea358db497, ) CALLER: (none) TIME: 0.087 seconds",
+      "out": {
+        "timestamp": "2015-06-24 11:27:36,372",
+        "loglevel": "ERROR",
+        "clientip": "10.160.64.18",
+        "api": "sync.content.synchronizeChannels",
+        "args": "116xbc5e24f008dc928de08e9eea358db497, ",
+        "caller": "none",
+        "duration": 0.087
+      }
+    },
+    {
+      "in": "[2015-01-05 15:51:22,549] INFO  - REQUESTED FROM: 10.160.64.18 CALL: auth.login(brett, ********) CALLER: (none) TIME: 0.021 seconds",
+      "out": {
+        "timestamp": "2015-01-05 15:51:22,549",
+        "loglevel": "INFO",
+        "clientip": "10.160.64.18",
+        "api": "auth.login",
+        "args": "brett, ********",
+        "caller": "none",
+        "duration": 0.021
+      }
+    }
+  ]
+}

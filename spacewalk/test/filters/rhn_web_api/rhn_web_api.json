@@ -1,0 +1,69 @@
+{
+  "name": "rhn_web_api.log",
+  "fields": {
+    "type": "rhn_web_api"
+  },
+  "ignore": ["@version", "timestamp", "message"],
+  "cases": [
+    {
+      "in": "redstone.xmlrpc.XmlRpcFault: unhandled internal exception: Could not find session with id: 116",
+      "out": {
+        "type": "rhn_web_api",
+        "tags": ["Exception"],
+        "api": "redstone.xmlrpc.XmlRpcFault",
+        "reason": "unhandled internal exception: Could not find session with id: 116"
+      }
+    },
+    {
+      "in": "[2014-10-16 01:20:12,932] INFO  - REQUESTED FROM: 127.0.0.1 CALL: api.getVersion() CALLER: (none) TIME: 0.036 seconds",
+      "out": {
+        "type": "rhn_web_api",
+        "@timestamp": "2014-10-16T01:20:12.932Z",
+        "loglevel": "INFO",
+        "clientip": "127.0.0.1",
+        "api": "api.getVersion",
+        "caller": "none",
+        "duration": 0.036
+      }
+    },
+    {
+      "in": "[2014-10-16 01:22:21,301] INFO  - REQUESTED FROM: 10.160.64.18 CALL: auth.checkAuthToken(taskomatic_user, d90c7d0f6505505981d2f65a55481208) CALLER: (none) TIME: 0.003 seconds",
+      "out": {
+        "type": "rhn_web_api",
+        "@timestamp": "2014-10-16T01:22:21.301Z",
+        "loglevel": "INFO",
+        "clientip": "10.160.64.18",
+        "api": "auth.checkAuthToken",
+        "args": "taskomatic_user, d90c7d0f6505505981d2f65a55481208",
+        "caller": "none",
+        "duration": 0.003
+      }
+    },
+    {
+      "in": "[2015-06-24 11:27:36,372] ERROR - REQUESTED FROM: 10.160.64.18 CALL: sync.content.synchronizeChannels(116xbc5e24f008dc928de08e9eea358db497, ) CALLER: (none) TIME: 0.087 seconds",
+      "out": {
+        "type": "rhn_web_api",
+        "@timestamp": "2015-06-24T11:27:36.372Z",
+        "loglevel": "ERROR",
+        "clientip": "10.160.64.18",
+        "api": "sync.content.synchronizeChannels",
+        "args": "116xbc5e24f008dc928de08e9eea358db497, ",
+        "caller": "none",
+        "duration": 0.087
+      }
+    },
+    {
+      "in": "[2015-01-05 15:51:22,549] INFO  - REQUESTED FROM: 10.160.64.18 CALL: auth.login(brett, ********) CALLER: (none) TIME: 0.021 seconds",
+      "out": {
+        "type": "rhn_web_api",
+        "@timestamp": "2015-01-05T15:51:22.549Z",
+        "loglevel": "INFO",
+        "clientip": "10.160.64.18",
+        "api": "auth.login",
+        "args": "brett, ********",
+        "caller": "none",
+        "duration": 0.021
+      }
+    }
+  ]
+}
