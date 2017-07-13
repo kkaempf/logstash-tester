@@ -110,6 +110,16 @@
         "proxy_errorcode": "2",
         "proxy_message": "No such file or directory"
       }
+    },
+    {
+      "in": "[Mon May 08 15:00:30.843771 2017] [wsgi:error] [pid 18901] SUSE Manager 18901 2017/05/08 15:00:30 +03:00: (\"DATABASE CONNECTION TO 'susemanager' LOST\", \"Exception information: Database instance has no attribute 'dbh'\")",
+      "out": {
+        "timestamp": "Mon May 08 15:00:30.843771 2017",
+        "module": "wsgi",
+        "loglevel": "error",
+        "pid": "18901",
+        "reason": "(\"DATABASE CONNECTION TO 'susemanager' LOST\", \"Exception information: Database instance has no attribute 'dbh'\")"
+      }
     }
   ]
 }
