@@ -66,6 +66,16 @@
         "loglevel": "WARN",
         "api": "org.apache.struts.action.RequestProcessor"
       }
+    },
+    {
+      "in": "2017-02-23 09:39:36,193 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] WARN  com.suse.manager.reactor.SaltReactor - Event stream closed: The listener has closed the event stream [GOING_AWAY]",
+      "out": {
+        "timestamp": "2017-02-23 09:39:36,193",
+        "component": "ContainerBackgroundProcessor[StandardEngine[Catalina]]",
+        "loglevel": "WARN",
+        "api": "com.suse.manager.reactor.SaltReactor",
+        "reason": "Event stream closed: The listener has closed the event stream [GOING_AWAY]"
+      }
     }
   ]
 }
