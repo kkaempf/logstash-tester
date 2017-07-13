@@ -71,6 +71,31 @@
         "errorcode": "AH01114",
         "reason": "HTTP: failed to make connection to backend: localhost"
       }
+    },
+    {
+      "in": "[Mon May 08 14:54:35.741992 2017] [wsgi:error] [pid 17192] [client 10.221.84.68:56623] mod_wsgi (pid=17192): Exception occurred processing WSGI script '/usr/share/rhn/wsgi/sat.py'.",
+      "out": {
+        "timestamp": "Mon May 08 14:54:35.741992 2017",
+        "module": "wsgi",
+        "loglevel": "error",
+        "pid": "17192",
+        "clientip": "10.221.84.68",
+        "clientport": "56623",
+        "errorcode": "mod_wsgi",
+        "reason": "Exception occurred processing WSGI script '/usr/share/rhn/wsgi/sat.py'."
+      }
+    },
+    {
+      "in": "[Mon May 08 14:54:36.728489 2017] [wsgi:error] [pid 17421] [client 10.221.84.68:56624] Traceback (most recent call last):",
+      "out": {
+        "timestamp": "Mon May 08 14:54:36.728489 2017",
+        "module": "wsgi",
+        "loglevel": "error",
+        "pid": "17421",
+        "clientip": "10.221.84.68",
+        "clientport": "56624",
+        "errorcode": "Traceback"
+      }
     }
   ]
 }
