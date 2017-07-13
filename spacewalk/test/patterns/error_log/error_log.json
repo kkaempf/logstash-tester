@@ -96,6 +96,20 @@
         "clientport": "56624",
         "errorcode": "Traceback"
       }
+    },
+    {
+      "in": "[Mon May 08 14:31:45.942118 2017] [:error] [pid 16696] (2)No such file or directory: [client 10.184.152.177:52786] xsendfile: cannot open file: /var/cache/rhn/repodata/intel-ec-sles11-sp4-linuxset-x86_64/repomd.xml.asc",
+      "out": {
+        "timestamp": "Mon May 08 14:31:45.942118 2017",
+        "loglevel": "error",
+        "pid": "16696",
+        "clientip": "10.184.152.177",
+        "clientport": "52786",
+        "errorcode": "xsendfile",
+        "reason": "cannot open file: /var/cache/rhn/repodata/intel-ec-sles11-sp4-linuxset-x86_64/repomd.xml.asc",
+        "proxy_errorcode": "2",
+        "proxy_message": "No such file or directory"
+      }
     }
   ]
 }

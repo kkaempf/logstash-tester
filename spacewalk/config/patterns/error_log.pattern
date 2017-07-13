@@ -5,5 +5,5 @@ PIDTID \[pid %{POSINT:pid}(:tid %{NUMBER:tid})?\]
 PROXY24 \s\(%{POSINT:proxy_errorcode}\)%{DATA:proxy_message}:
 CLIENT24 \s\[client %{IPORHOST:clientip}:%{POSINT:clientport}\]
 TRACEBACK \s\(most recent call last\)
-ERROR_LOG \[%{HTTPDERROR_DATE:timestamp}\] \[%{WORD:module}:%{LOGLEVEL:loglevel}\] %{PIDTID}(%{PROXY24})?(%{CLIENT24})? %{WORD:errorcode}( \(pid=%{POSINT}\))?(\s\(most recent call last\))?:(\s%{REASON:reason})?
+ERROR_LOG \[%{HTTPDERROR_DATE:timestamp}\]\s\[(%{WORD:module})?:%{LOGLEVEL:loglevel}\]\s%{PIDTID}(%{PROXY24})?(%{CLIENT24})?\s%{WORD:errorcode}(\s\(pid=%{POSINT}\))?(\s\(most recent call last\))?:(\s%{REASON:reason})?
 
