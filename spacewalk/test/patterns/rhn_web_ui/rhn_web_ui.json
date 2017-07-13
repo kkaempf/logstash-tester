@@ -1,0 +1,62 @@
+{
+  "name": "rhn_web_ui.log",
+  "pattern": "RHN_WEB_UI",
+  "cases": [
+    {
+      "in": "2017-02-21 13:10:00,404 [RHN Message Dispatcher] WARN  org.hibernate.engine.StatefulPersistenceContext.ProxyWarnLog - Narrowing proxy to class com.redhat.rhn.domain.server.MinionServer - this operation breaks ==",
+      "out": {
+        "timestamp": "2017-02-21 13:10:00,404",
+        "component": "RHN Message Dispatcher",
+        "loglevel": "WARN",
+        "api": "org.hibernate.engine.StatefulPersistenceContext.ProxyWarnLog",
+        "reason": "Narrowing proxy to class com.redhat.rhn.domain.server.MinionServer - this operation breaks =="
+      }
+    },
+    {
+      "in": "2017-02-23 14:51:44,119 [RHN Message Dispatcher] WARN  com.suse.manager.webui.services.impl.SaltService - Got no result for grains.item on minion itstl1022.iil.suse.com (minion did not respond in time)",
+      "out": {
+        "timestamp": "2017-02-23 14:51:44,119",
+        "component": "RHN Message Dispatcher",
+        "loglevel": "WARN",
+        "api": "com.suse.manager.webui.services.impl.SaltService",
+        "reason": "Got no result for grains.item on minion itstl1022.iil.suse.com (minion did not respond in time)"
+      }
+    },
+    {
+      "in": "2017-02-27 12:47:21,161 [ajp-nio-0:0:0:0:0:0:0:1-8009-exec-3] ERROR com.redhat.rhn.frontend.action.common.DownloadFile - /var/cache/rhn/repodata/suse-ec-sle11-sdk-sp4-pool-x86_64/repomd.xml.asc Not Found .. 404!",
+      "out": {
+        "timestamp": "2017-02-27 12:47:21,161",
+        "component": "ajp-nio-0:0:0:0:0:0:0:1-8009-exec-3",
+        "loglevel": "ERROR",
+        "api": "com.redhat.rhn.frontend.action.common.DownloadFile",
+        "reason": "/var/cache/rhn/repodata/suse-ec-sle11-sdk-sp4-pool-x86_64/repomd.xml.asc Not Found .. 404!"
+      }
+    },
+    {
+      "in": "Caused by: com.redhat.rhn.common.hibernate.LookupException: Unable to locate or access ISS Slave : iapp249.iil.suse.com",
+      "out": {
+        "exception": "com.redhat.rhn.common.hibernate.LookupException",
+        "reason": "Unable to locate or access ISS Slave : iapp249.iil.suse.com"
+      }
+    },
+    {
+      "in": "java.lang.NullPointerException",
+      "out": {
+        "exception": "java.lang.NullPointerException"
+      }
+    },
+    {
+      "in": "java.lang.reflect.InvocationTargetException",
+      "out": {
+        "exception": "java.lang.reflect.InvocationTargetException"
+      }
+    },
+    {
+      "in": "com.redhat.rhn.common.hibernate.LookupException: Unable to locate or access ISS Slave : iapp249.iil.suse.com",
+      "out": {
+        "exception": "com.redhat.rhn.common.hibernate.LookupException",
+        "reason": "Unable to locate or access ISS Slave : iapp249.iil.suse.com"
+      }
+    }
+  ]
+}
