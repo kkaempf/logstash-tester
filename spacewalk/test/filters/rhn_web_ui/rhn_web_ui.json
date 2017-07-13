@@ -49,7 +49,7 @@
       }
     },
     {
-      "in": "java.lang.NullPointerException",
+      "in": "java.lang.NullPointerException\n        at java.util.Objects.requireNonNull(Objects.java:214)\n        at java.util.Optional.<init>(Optional.java:107)\n        at java.util.Optional.of(Optional.java:119)",
       "out": {
         "type": "rhn_web_ui",
         "tags": ["Exception"],
