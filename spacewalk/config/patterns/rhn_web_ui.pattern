@@ -3,4 +3,4 @@ APITIMESTAMP [-\d]+\s[:\d,]+
 APICOMPONENT [^\]]+
 EXCEPTION [\w\.]+Exception
 
-RHN_WEB_UI (%{APITIMESTAMP:timestamp} \[%{APICOMPONENT:component}\] %{LOGLEVEL:loglevel}\s+%{API:api} - %{REASON:reason})|((Caused by: )?%{EXCEPTION:exception}(: %{REASON:reason})?)
+RHN_WEB_UI (%{APITIMESTAMP:timestamp} \[%{APICOMPONENT:component}\] %{LOGLEVEL:loglevel}\s+%{API:api}\s-\s(%{REASON:reason})?)|((Caused by: )?%{EXCEPTION:exception}(: %{REASON:reason})?)

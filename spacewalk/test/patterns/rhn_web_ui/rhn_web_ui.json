@@ -57,6 +57,15 @@
         "exception": "com.redhat.rhn.common.hibernate.LookupException",
         "reason": "Unable to locate or access ISS Slave : iapp249.iil.suse.com"
       }
+    },
+    {
+      "in": "2017-05-08 14:22:06,965 [ajp-nio-0:0:0:0:0:0:0:1-8009-exec-266] WARN  org.apache.struts.action.RequestProcessor - ",
+      "out": {
+        "timestamp": "2017-05-08 14:22:06,965",
+        "component": "ajp-nio-0:0:0:0:0:0:0:1-8009-exec-266",
+        "loglevel": "WARN",
+        "api": "org.apache.struts.action.RequestProcessor"
+      }
     }
   ]
 }
