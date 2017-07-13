@@ -9,7 +9,6 @@
       "in": "10.160.64.92 - - [15/Jun/2017:10:00:04 +1000] \"POST /XMLRPC HTTP/1.1\" 200 1060",
       "out": {
         "type": "access_log",
-        "message": "10.160.64.92 - - [15/Jun/2017:10:00:04 +1000] \"POST /XMLRPC HTTP/1.1\" 200 1060",
         "clientip": "10.160.64.92",
         "ident": "-",
         "auth": "-",
@@ -25,7 +24,6 @@
       "in": "10.160.64.18 - - [15/Jun/2017:10:01:00 +1000] \"POST /cobbler_api HTTP/1.1\" 503 1012 \"-\" \"Java/1.8.0\"",
       "out": {
         "type": "access_log",
-        "message": "10.160.64.18 - - [15/Jun/2017:10:01:00 +1000] \"POST /cobbler_api HTTP/1.1\" 503 1012 \"-\" \"Java/1.8.0\"",
         "clientip": "10.160.64.18",
         "ident": "-",
         "auth": "-",
