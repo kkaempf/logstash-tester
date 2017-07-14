@@ -3,7 +3,7 @@
   "fields": {
     "type": "access_log"
   },
-  "ignore": ["@version", "timestamp"],
+  "ignore": ["@version", "timestamp", "message"],
   "cases": [
     {
       "in": "10.160.64.92 - - [15/Jun/2017:10:00:04 +1000] \"POST /XMLRPC HTTP/1.1\" 200 1060",

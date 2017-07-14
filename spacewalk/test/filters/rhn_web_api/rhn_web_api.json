@@ -9,7 +9,7 @@
       "in": "redstone.xmlrpc.XmlRpcFault: unhandled internal exception: Could not find session with id: 116",
       "out": {
         "type": "rhn_web_api",
-        "tags": ["Exception"],
+        "tags": ["exception"],
         "api": "redstone.xmlrpc.XmlRpcFault",
         "reason": "unhandled internal exception: Could not find session with id: 116"
       }

@@ -40,37 +40,14 @@
       }
     },
     {
-      "in": "Caused by: com.redhat.rhn.common.hibernate.LookupException: Unable to locate or access ISS Slave : iapp249.iil.suse.com",
+      "in": "2017-03-26 12:50:59,643 [pool-3-thread-5] ERROR com.redhat.rhn.frontend.events.AbstractDatabaseAction - Error executing action com.suse.manager.reactor.messaging.JobReturnEventMessageAction\njava.lang.NullPointerException\n\tat java.util.Objects.requireNonNull(Objects.java:214)\n\tat java.util.Optional.<init>(Optional.java:107)\n\tat java.util.Optional.of(Optional.java:119)\n\tat com.suse.manager.utils.SaltUtils.handlePackageProfileUpdate(SaltUtils.java:373)\n\tat com.suse.manager.utils.SaltUtils.lambda$updateServerAction$6(SaltUtils.java:240)\n\tat com.suse.manager.utils.SaltUtils$$Lambda$201.00000000680260E0.accept(Unknown Source)\n\tat java.util.Optional.ifPresent(Optional.java:170)\n\tat com.suse.manager.utils.SaltUtils.updateServerAction(SaltUtils.java:239)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction.lambda$null$1(JobReturnEventMessageAction.java:118)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction$$Lambda$197.00000000680249E0.accept(Unknown Source)\n\tat java.util.Optional.ifPresent(Optional.java:170)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction.lambda$null$2(JobReturnEventMessageAction.java:113)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction$$Lambda$193.000000006804EDF0.accept(Unknown Source)\n\tat java.util.Optional.ifPresent(Optional.java:170)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction.lambda$doExecute$4(JobReturnEventMessageAction.java:106)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction$$Lambda$99.000000006800EC80.accept(Unknown Source)\n\tat java.util.Optional.ifPresent(Optional.java:170)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction.doExecute(JobReturnEventMessageAction.java:87)\n\tat com.redhat.rhn.frontend.events.AbstractDatabaseAction.execute(AbstractDatabaseAction.java:53)\n\tat com.redhat.rhn.common.messaging.ActionExecutor.run(ActionExecutor.java:69)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1153)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat java.lang.Thread.run(Thread.java:785)",
       "out": {
         "type": "rhn_web_ui",
-        "tags": ["Exception"],
-        "exception": "com.redhat.rhn.common.hibernate.LookupException",
-        "reason": "Unable to locate or access ISS Slave : iapp249.iil.suse.com"
-      }
-    },
-    {
-      "in": "java.lang.NullPointerException\n        at java.util.Objects.requireNonNull(Objects.java:214)\n        at java.util.Optional.<init>(Optional.java:107)\n        at java.util.Optional.of(Optional.java:119)",
-      "out": {
-        "type": "rhn_web_ui",
-        "tags": ["Exception"],
-        "exception": "java.lang.NullPointerException"
-      }
-    },
-    {
-      "in": "java.lang.reflect.InvocationTargetException",
-      "out": {
-        "type": "rhn_web_ui",
-        "tags": ["Exception"],
-        "exception": "java.lang.reflect.InvocationTargetException"
-      }
-    },
-    {
-      "in": "com.redhat.rhn.common.hibernate.LookupException: Unable to locate or access ISS Slave : iapp249.iil.suse.com",
-      "out": {
-        "type": "rhn_web_ui",
-        "tags": ["Exception"],
-        "exception": "com.redhat.rhn.common.hibernate.LookupException",
-        "reason": "Unable to locate or access ISS Slave : iapp249.iil.suse.com"
+        "@timestamp": "2017-03-26T12:50:59.643Z",
+        "component": "pool-3-thread-5",
+        "loglevel": "ERROR",
+        "api": "com.redhat.rhn.frontend.events.AbstractDatabaseAction",
+        "reason": "Error executing action com.suse.manager.reactor.messaging.JobReturnEventMessageAction\njava.lang.NullPointerException\n\tat java.util.Objects.requireNonNull(Objects.java:214)\n\tat java.util.Optional.<init>(Optional.java:107)\n\tat java.util.Optional.of(Optional.java:119)\n\tat com.suse.manager.utils.SaltUtils.handlePackageProfileUpdate(SaltUtils.java:373)\n\tat com.suse.manager.utils.SaltUtils.lambda$updateServerAction$6(SaltUtils.java:240)\n\tat com.suse.manager.utils.SaltUtils$$Lambda$201.00000000680260E0.accept(Unknown Source)\n\tat java.util.Optional.ifPresent(Optional.java:170)\n\tat com.suse.manager.utils.SaltUtils.updateServerAction(SaltUtils.java:239)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction.lambda$null$1(JobReturnEventMessageAction.java:118)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction$$Lambda$197.00000000680249E0.accept(Unknown Source)\n\tat java.util.Optional.ifPresent(Optional.java:170)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction.lambda$null$2(JobReturnEventMessageAction.java:113)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction$$Lambda$193.000000006804EDF0.accept(Unknown Source)\n\tat java.util.Optional.ifPresent(Optional.java:170)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction.lambda$doExecute$4(JobReturnEventMessageAction.java:106)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction$$Lambda$99.000000006800EC80.accept(Unknown Source)\n\tat java.util.Optional.ifPresent(Optional.java:170)\n\tat com.suse.manager.reactor.messaging.JobReturnEventMessageAction.doExecute(JobReturnEventMessageAction.java:87)\n\tat com.redhat.rhn.frontend.events.AbstractDatabaseAction.execute(AbstractDatabaseAction.java:53)\n\tat com.redhat.rhn.common.messaging.ActionExecutor.run(ActionExecutor.java:69)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1153)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat java.lang.Thread.run(Thread.java:785)"
       }
     }
   ]
