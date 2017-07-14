@@ -3,7 +3,7 @@ require_relative "./spec_helper"
 require "json"
 
 # Load pattern test cases
-pattern_data = Dir[File.join(File.dirname(__FILE__), 'pattern_data/**/*.json')]
+pattern_data = Dir['/data/test/patterns/**/*.json']
 
 pattern_data.each do |data_file|
   # Load test case data from file

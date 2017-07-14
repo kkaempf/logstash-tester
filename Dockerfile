@@ -16,19 +16,8 @@ RUN ls -la
 RUN GEM_HOME=/usr/share/logstash/vendor/bundle/jruby/1.9 jgem install ./logstash-core-5.4.3-java.gem
 RUN GEM_HOME=/usr/share/logstash/vendor/bundle/jruby/1.9 jgem install ./logstash-core-plugin-api-2.1.12-java.gem
 
-ARG LST
-ARG FILTER_CONFIG
-ARG PATTERN_CONFIG
-ARG FILTER_TESTS
-ARG PATTERN_TESTS
-
-ADD $PATTERN_CONFIG /etc/logstash/patterns
-ADD $LST/test /test
-ADD $FILTER_CONFIG /test/spec/filter_config
-ADD $FILTER_TESTS /test/spec/filter_data
-ADD $PATTERN_TESTS /test/spec/pattern_data
+VOLUME /data /test
 
 # drop /data symlink
 RUN rm -f /usr/share/logstash/data
 ENTRYPOINT ["/test/run-tests.sh"]
-#ENTRYPOINT ["/bin/bash"]

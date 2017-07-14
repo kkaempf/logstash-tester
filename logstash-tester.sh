@@ -51,7 +51,7 @@ error() {
 
 run_docker() {
     action=$1
-    configtest=$2
+    datadir=$2
 
     if ! hash docker 2> /dev/null; then
         error "Can't find the Docker executable. Did you install it?"
@@ -61,17 +61,16 @@ run_docker() {
 
     echo "====> Build docker image for test"
     docker build -t kkaempf/logstash-tester \
-        --build-arg LST=$rootdir \
-        --build-arg FILTER_CONFIG=$3 \
-        --build-arg PATTERN_CONFIG=$4 \
-        --build-arg FILTER_TESTS=$5 \
-        --build-arg PATTERN_TESTS=$6 \
         -f $rootdir/Dockerfile .
 
     echo "====> Run test in docker container"
     echo "====> action $action"
-    echo "====> configtest $configtest"
-    docker run --rm -it kkaempf/logstash-tester $action $configtest
+    echo "====> datadir $datadir"
+    docker run --rm -it \
+      -v `pwd`/test:/test \
+      -v `pwd`/$datadir:/data \
+      kkaempf/logstash-tester \
+      $action
 }
 
 # Default values
@@ -124,14 +123,9 @@ if [[ -z $datadir ]]; then
 fi
 
 # Validate directories
-docker_filter_config=$datadir/config/conf.d
+docker_filter_config=$datadir/config
 if [[ ! -d $docker_filter_config ]]; then
     error "The filter config directory '$docker_filter_config' does not exist."
-fi
-
-docker_pattern_config=$datadir/config/patterns
-if [[ ! -d $docker_pattern_config ]]; then
-    error "The patterns directory '$docker_pattern_config' does not exist."
 fi
 
 docker_filter_test=$datadir/test/filters
@@ -147,5 +141,5 @@ if [[ ! -d $docker_pattern_test ]]; then
     error "The patterns tests directory '$docker_pattern_test' does not exist."
 fi
 
-run_docker $action $configtest $docker_filter_config $docker_pattern_config $docker_filter_test $docker_pattern_test
+run_docker $action $datadir
 

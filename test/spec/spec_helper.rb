@@ -18,7 +18,7 @@ require 'rspec/expectations'
 # LOGSTASH_HOME will not be defined, so let's set it here
 # before requiring the grok filter
 unless LogStash::Environment.const_defined?(:LOGSTASH_HOME)
-  LogStash::Environment::LOGSTASH_HOME = File.expand_path("../", __FILE__)
+  LogStash::Environment::LOGSTASH_HOME = File.expand_path('/data')
 end
 
 # temporary fix to have the spec pass for an urgen mass-publish requirement.
@@ -29,7 +29,12 @@ module LogStash::Environment
   # also :pattern_path method must exist so we define it too
   unless self.method_defined?(:pattern_path)
     def pattern_path(path)
-      ::File.join(LOGSTASH_HOME, "patterns", path)
+      '/data/config/pattern'
+    end
+  end
+  unless self.method_defined?(:config_path)
+    def config_path(path)
+      '/data/config/filter'
     end
   end
 end
@@ -47,7 +52,7 @@ module GrokHelpers
   def build_grok(label)
     grok = LogStash::Filters::Grok.new("match" => ["message", "%{#{label}}"])
     # Manually set patterns_dir so that grok finds them when we're testing patterns
-    grok.patterns_dir = ["/etc/logstash/patterns"]
+    grok.patterns_dir = ["/data/config/pattern"]
     grok.register
     grok
   end
