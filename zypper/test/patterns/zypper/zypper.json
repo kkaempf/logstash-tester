@@ -12,7 +12,12 @@
         "timestamp": "2017-11-08 18:57:23",
         "loglevel": "1",
         "host": "x220.kkaempf",
-        "pid": "29653"
+        "pid": "29653",
+        "component": "zypper",
+        "file": "main.cc",
+        "function": "main",
+        "line": "74",
+        "data": "===== Hi, me zypper 1.13.37"
       }
     }
   ]

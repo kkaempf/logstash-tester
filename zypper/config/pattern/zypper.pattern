@@ -1,5 +1,10 @@
 # zypper.log
 TIMESTAMP \d\d\d\d\-\d\d\-\d\d\s\d\d:\d\d:\d\d
 LOGLEVEL \d+
+COMPONENT [^\]]+
+FILE [^\(]+
+FUNCTION [^\)]+
+LINE \d+
+DATA .*
 
-ZYPPER %{TIMESTAMP:timestamp}\s\<%{LOGLEVEL:loglevel}\>\s%{HOSTNAME:host}\(%{INT:pid}\).*
+ZYPPER %{TIMESTAMP:timestamp}\s\<%{LOGLEVEL:loglevel}\>\s%{HOSTNAME:host}\(%{INT:pid}\)\s\[%{COMPONENT:component}\]\s%{FILE:file}\(%{FUNCTION:function}\):%{LINE:line}\s%{DATA:data}
