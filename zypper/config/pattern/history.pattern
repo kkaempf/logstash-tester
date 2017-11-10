@@ -1,0 +1,25 @@
+# zypp/history
+NOPIPE [^\s\|]+
+
+PACKAGE %{NOPIPE}
+VERSION %{NOPIPE}
+ARCH %{NOPIPE}
+REPO %{NOPIPE}
+CHECKSUM %{NOPIPE}
+USERDATA .*
+ALIAS %{NOPIPE}
+URL %{NOPIPE}
+CMD %{NOPIPE}
+WHO %{NOPIPE}
+
+RADD    radd\s\s\s\|%{ALIAS:alias}\|%{URL:url}
+RURL    rurl\s\s\s\|%{ALIAS:oldalias}\|%{ALIAS:newalias}
+RALIAS  ralias\s\|%{URL:oldurl}\|%{URL:newurl}
+RREMOVE rremove\|%{ALIAS:alias}
+#COMMAND command\|%{WHO:who}\|%{CMD:command}
+COMMAND command\|%{WHO:who}\|.*
+INSTALL install\|%{PACKAGE:package}\|%{VERSION:version}\|%{ARCH:arch}\|(%{WHO:who})?\|%{REPO:repo}|%{CHECKSUM:checksum}
+REMOVE  remove\s|%{PACKAGE:package}\|%{VERSION:version}\|%{ARCH:arch}\|%{WHO:who}
+
+#HISTORY %{TIMESTAMP:timestamp}\|(%{RADD}|%{RREMOVE}|%{RURL}|%{RALIAS}|%{COMMAND}|%{INSTALL}|%{REMOVE})\|%{USERDATA:userdata}
+HISTORY %{TIMESTAMP:timestamp}\|%{COMMAND}

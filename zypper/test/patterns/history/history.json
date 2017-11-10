@@ -1,0 +1,18 @@
+{
+  "name": "history",
+  "fields": {
+    "type": "history"
+  },
+  "ignore": ["@version", "timestamp", "message"],
+  "pattern": "HISTORY",
+  "cases": [
+    {
+      "in": "2017-10-11 09:49:33|command|root@x220.kkaempf|'zypper' 'dup' '--no-allow-vendor-change'|",
+      "out": {
+        "timestamp": "2017-10-11 09:49:33",
+        "who": "root@x220.kkaempf",
+        "command": "'zypper' 'dup' '--no-allow-vendor-change'"
+      }
+    }
+  ]
+}
