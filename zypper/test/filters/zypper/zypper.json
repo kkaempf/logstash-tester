@@ -1,0 +1,20 @@
+{
+  "name": "zypper.log",
+  "fields": {
+    "type": "zypper"
+  },
+  "ignore": ["@version", "timestamp", "message"],
+  "pattern": "ZYPPER",
+  "cases": [
+    {
+      "in": "2017-11-08 18:57:23 <1> x220.kkaempf(29653) [zypper] main.cc(main):74 ===== Hi, me zypper 1.13.37",
+      "out": {
+        "type": "zypper",
+        "@timestamp": "2017-11-08T18:57:23.000Z",
+        "loglevel": "1",
+        "host": "x220.kkaempf",
+        "pid": "29653"
+      }
+    }
+  ]
+}

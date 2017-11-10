@@ -1,0 +1,5 @@
+# zypper.log
+TIMESTAMP \d\d\d\d\-\d\d\-\d\d\s\d\d:\d\d:\d\d
+LOGLEVEL \d+
+
+ZYPPER %{TIMESTAMP:timestamp}\s\<%{LOGLEVEL:loglevel}\>\s%{HOSTNAME:host}\(%{INT:pid}\).*
