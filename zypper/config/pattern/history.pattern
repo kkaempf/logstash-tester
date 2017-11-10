@@ -2,24 +2,30 @@
 NOPIPE [^\s\|]+
 
 PACKAGE %{NOPIPE}
-VERSION %{NOPIPE}
+EDITION %{NOPIPE}
 ARCH %{NOPIPE}
 REPO %{NOPIPE}
 CHECKSUM %{NOPIPE}
 USERDATA .*
 ALIAS %{NOPIPE}
 URL %{NOPIPE}
-CMD %{NOPIPE}
+CMD [^\|]+
 WHO %{NOPIPE}
+ACTION_COMMAND command
+ACTION_INSTALL install
+ACTION_RADD radd
+ACTION_RURL rurl
+ACTION_RALIAS ralias
+ACTION_RREMOVE rremove
+ACTION_REMOVE remove
 
-RADD    radd\s\s\s\|%{ALIAS:alias}\|%{URL:url}
-RURL    rurl\s\s\s\|%{ALIAS:oldalias}\|%{ALIAS:newalias}
-RALIAS  ralias\s\|%{URL:oldurl}\|%{URL:newurl}
-RREMOVE rremove\|%{ALIAS:alias}
-#COMMAND command\|%{WHO:who}\|%{CMD:command}
-COMMAND command\|%{WHO:who}\|.*
-INSTALL install\|%{PACKAGE:package}\|%{VERSION:version}\|%{ARCH:arch}\|(%{WHO:who})?\|%{REPO:repo}|%{CHECKSUM:checksum}
-REMOVE  remove\s|%{PACKAGE:package}\|%{VERSION:version}\|%{ARCH:arch}\|%{WHO:who}
+RADD    %{ACTION_RADD:action}\s*\|%{ALIAS:alias}\|%{URL:url}
+RURL    %{ACTION_RURL:action}\s*\|%{ALIAS:oldalias}\|%{ALIAS:newalias}
+RALIAS  %{ACTION_RALIAS:action}\s*\|%{URL:oldurl}\|%{URL:newurl}
+RREMOVE %{ACTION_RREMOVE:action}\s*\|%{ALIAS:alias}
+COMMAND %{ACTION_COMMAND:action}\s*\|%{WHO:who}\|%{CMD:command}
+INSTALL %{ACTION_INSTALL:action}\s*\|%{PACKAGE:package}\|%{EDITION:edition}\|%{ARCH:arch}\|(%{WHO:who})?\|%{REPO:repo}\|%{CHECKSUM:checksum}
+REMOVE  %{ACTION_REMOVE:action}\s*|%{PACKAGE:package}\|%{EDITION:edition}\|%{ARCH:arch}\|%{WHO:who}
 
-#HISTORY %{TIMESTAMP:timestamp}\|(%{RADD}|%{RREMOVE}|%{RURL}|%{RALIAS}|%{COMMAND}|%{INSTALL}|%{REMOVE})\|%{USERDATA:userdata}
-HISTORY %{TIMESTAMP:timestamp}\|%{COMMAND}
+#HISTORY %{TIMESTAMP:timestamp}\|(%{RADD}|%{RREMOVE}|%{RURL}|%{RALIAS}|%{COMMAND}|%{INSTALL}|%{REMOVE})\|(%{USERDATA:userdata})?
+HISTORY %{TIMESTAMP:timestamp}\|(%{COMMAND}|%{INSTALL})\|%{USERDATA:userdata}

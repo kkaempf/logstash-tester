@@ -9,7 +9,8 @@
     {
       "in": "2017-10-11 09:49:33|command|root@x220.kkaempf|'zypper' 'dup' '--no-allow-vendor-change'|",
       "out": {
-        "timestamp": "2017-10-11 09:49:33",
+        "type": "history",
+        "@timestamp": "2017-10-11T09:49:33.000Z",
         "action": "command",
         "who": "root@x220.kkaempf",
         "command": "'zypper' 'dup' '--no-allow-vendor-change'"
@@ -18,7 +19,8 @@
     {
       "in": "2017-10-11 09:49:33|install|breeze5-cursors|5.11.0-1.1|noarch||oss|302bbbec69179888ed639bcf7dda3aceabdd1aab|",
       "out": {
-        "timestamp": "2017-10-11 09:49:33",
+        "type": "history",
+        "@timestamp": "2017-10-11T09:49:33.000Z",
         "action": "install",
         "package": "breeze5-cursors",
         "edition": "5.11.0-1.1",
